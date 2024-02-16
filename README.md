@@ -60,26 +60,40 @@ pip install -r requirements.txt
 # Como executar a aplicação 
 
 Após fazer a instalação de todas as dependências será possível rodar o código principal. 
-Com o terminal aberto no repositório execute o comando :
+Com o terminal aberto no repositório entre no diretório src com :
 
-- Windows, rodar:
 ```bash
-python .\src\app.py 
+cd src
 ```
-- Caso Linux, rodar:
+
+- No diretório src, executar :
 ```bash
-python /src/app.py 
+python app.py
 ```
-Após executar, a planilha no Google Sheets será atualizada conforme regras do desafio.
+- Ou caso alguma problema, tente:
+```bash
+python3 app.py
+```
+Após executar o código, a planilha no Google Sheets será atualizada conforme regras do desafio.
+
+## Logs
+
+Válido ressaltar que após executar o código será criado um diretório logs e um arquivo de log para acompanhar as
+atividades da aplicação
 
 ## Google API
 
 A aplicação foi criada utilizando a forma de acesso a planilha através da API do Google utilizando uma aplicação criada
-no Google Cloud em minha conta gmail. A forma de credencial utilizado foi a de "Contas de serviço" pois caso fosse utilizado
-"IDs do cliente OAuth 2.0" é necessário realizar um autenticação por usuário na primeira conexão utilizando um email 
+no Google Cloud em minha conta gmail. A forma de validar credencial utilizada foi a de "Contas de serviço" pois caso fosse utilizado
+"IDs do cliente OAuth 2.0" é necessário realizar um autenticação por usuário utilizando um email 
 Google, mas o problema estava que devido a aplicação criada não ter sido verificada pelo Google, ela informava na 
-primeira autenticação que era um app não verificado e era preciso realizar um processo que iria atrapalhar a experiência
-para o teste do desafio.  
+primeira autenticação que era um app não verificado e era preciso realizar um processo que iria dificultar e atrapalhar a experiência
+para o teste da execução correta do desafio.
 
+Caso desejar verificar o funcionamento utilizando a sua aplicação do Google Cloud, basta substituir o arquivo 
+credentials.json (Mantendo a nomeclatura) dentro de src/modules/service/client_credentials/
 
-O link para a planilha será enviado na entrega do projeto.
+E se desejar utilizar outra planilha, basta substituir com o ID da nova planilha na variável spreadsheet_id em src/app.py
+
+OBS: O link para a planilha, junto ao deste repositório e o passo a passo para executar a aplicação foi enviado 
+na entrega do projeto na plataforma.

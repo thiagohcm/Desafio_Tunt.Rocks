@@ -16,7 +16,7 @@ class Client:
     # Load the credentials from service account file
     def get_credentials(self):
         client_secret_filepath = os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                              'client_secret', 'credentials.json')
+                                              'client_credentials', 'credentials.json')
         try:
             self.creds = service_account.Credentials.from_service_account_file(client_secret_filepath,
                                                                                scopes=self.SCOPES)

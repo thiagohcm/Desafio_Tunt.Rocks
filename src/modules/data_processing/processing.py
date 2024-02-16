@@ -16,7 +16,7 @@ class SpreadSheet:
     def get_sheet(self, service):
         try:
             self.sheet = service.spreadsheets()
-            logger.info("Successfully read the sheet")
+            logger.info("Successfully obtained the spreadsheet")
         except Error as error:
             logger.error(f"An error occurred: {error}")
 
@@ -36,7 +36,8 @@ class SpreadSheet:
         logger.info("Processed the values successfully")
         return ent_values
 
-    # Get multiples values from sheet to process data
+    # Get multiples values from sheet to process data, both row with the total number of classes and the rows with the
+    # students data
     def batch_get_values(self, range_names):
         try:
             result = (
