@@ -62,8 +62,13 @@ pip install -r requirements.txt
 Após fazer a instalação de todas as dependências será possível rodar o código principal. 
 Com o terminal aberto no repositório execute o comando :
 
+- Windows, rodar:
 ```bash
 python .\src\app.py 
+```
+- Caso Linux, rodar:
+```bash
+python /src/app.py 
 ```
 Após executar, a planilha no Google Sheets será atualizada conforme regras do desafio.
 
