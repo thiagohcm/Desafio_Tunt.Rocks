@@ -11,7 +11,7 @@ necessárias, calcular e escrever o  resultado na planilha.
 Para executar o projeto é necessário primeiramente ter o python => 3.12 instalado em sua máquina. Você pode encontrar 
 o python para download [aqui](https://www.python.org/downloads/) 
 
-Você pode checar se está tudo instalado corretamente rodando em seu terminal os comandos :
+Você pode verificar se o python está instalado corretamente, executando em seu terminal os comandos :
 
 ``` bash
 python --version
@@ -21,37 +21,41 @@ python --version
 pip --version
 ```
 
-- Primeiro clone o repositório do projeto
+O pip é o sistema de gerenciamento de pacotes para python, ele vem junto ao python no processo de instalação.
+
+
+Agora após ter instalado o python, entre no diretório no qual deseja clonar o repositório do projeto.
+- Clone o repositório do projeto:
 
 ```bash
 git clone https://github.com/thiagohcm/Desafio_Tunt.Rocks.git
 ```
 
-- Após clonar o repositório do projeto para sua máquina o próximo passo é entrar no projeto com:
+- Após clonar o repositório do projeto para sua máquina o próximo passo é entrar no diretório do projeto com:
 
 ```bash
 cd Desafio_Tunt.Rocks
 ```
 
-- Dentro do projeto criar um ambiente virtual
+- Dentro do projeto criar um ambiente virtual:
 
 ```bash
 python -m venv venv
 ```
 
-- Para ativar o ambiente virtual no Windows, rodar:
+- Para ativar o ambiente virtual no Windows, executar:
 
 ```bash
 .\venv\Scripts\activate
 ```
 
-- Caso Linux, rodar:
+- Caso Linux, executar:
 
 ```bash
 source venv/bin/activate
 ```
 
-- Instalar as dependências necessárias através do requirements.txt
+- Instalar as dependências necessárias através do requirements.txt:
 
 ```bash
 pip install -r requirements.txt
@@ -79,7 +83,7 @@ Após executar o código, a planilha no Google Sheets será atualizada conforme 
 ## Logs
 
 Válido ressaltar que após executar o código será criado um diretório logs e um arquivo de log para acompanhar as
-atividades da aplicação
+atividades da aplicação.
 
 ## Google API
 
@@ -94,6 +98,8 @@ Caso desejar verificar o funcionamento utilizando a sua aplicação do Google Cl
 credentials.json (Mantendo a nomeclatura) dentro de src/modules/service/client_credentials/
 
 E se desejar utilizar outra planilha, basta substituir com o ID da nova planilha na variável spreadsheet_id em src/app.py
+
+Documentação sobre Google authentication and authorization [aqui](https://developers.google.com/workspace/guides/auth-overview).
 
 OBS: O link para a planilha, junto ao deste repositório e o passo a passo para executar a aplicação foi enviado 
 na entrega do projeto na plataforma.

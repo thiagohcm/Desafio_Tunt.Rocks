@@ -20,7 +20,7 @@ class SpreadSheet:
         except Error as error:
             logger.error(f"An error occurred: {error}")
 
-    # Processes data and stores it in ent_values
+    # Processes the data and stores it in ent_values
     def process_sheet(self):
         values = self.values[1].get("values", [])
         ent_values = []
