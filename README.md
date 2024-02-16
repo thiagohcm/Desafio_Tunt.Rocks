@@ -64,7 +64,7 @@ pip install -r requirements.txt
 # Como executar a aplicação 
 
 Após fazer a instalação de todas as dependências será possível rodar o código principal. 
-Com o terminal aberto no repositório entre no diretório src com :
+Com o terminal aberto no repositório entre no diretório ```src``` com :
 
 ```bash
 cd src
@@ -87,15 +87,16 @@ atividades da aplicação.
 
 ## Google API
 
-A aplicação foi criada utilizando a forma de acesso a planilha através da API do Google utilizando uma aplicação criada
+A aplicação foi criada utilizando a forma de acesso a planilha através da Google Sheets API utilizando uma aplicação criada
 no Google Cloud em minha conta gmail. A forma de validar credencial utilizada foi a de "Contas de serviço" pois caso fosse utilizado
 "IDs do cliente OAuth 2.0" é necessário realizar um autenticação por usuário utilizando um email 
 Google, mas o problema estava que devido a aplicação criada não ter sido verificada pelo Google, ela informava na 
-primeira autenticação que era um app não verificado e era preciso realizar um processo que iria dificultar e atrapalhar a experiência
-para o teste da execução correta do desafio.
+primeira autenticação que era um app não verificado e era preciso realizar um processo que iria funcionar mas so iria 
+dificultar e atrapalhar a experiência para o teste da execução correta do desafio.
 
 Caso desejar verificar o funcionamento utilizando a sua aplicação do Google Cloud, basta substituir o arquivo 
-credentials.json (Mantendo a nomeclatura) dentro de src/modules/service/client_credentials/
+credentials.json (Mantendo a nomeclatura) dentro de src/modules/service/client_credentials/. Ressaltando que é utilizando
+via a autenticação "Contas de serviço" da aplicação do Google Cloud.
 
 E se desejar utilizar outra planilha, basta substituir com o ID da nova planilha na variável spreadsheet_id em src/app.py
 
