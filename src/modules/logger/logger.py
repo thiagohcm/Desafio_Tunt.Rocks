@@ -7,6 +7,9 @@ def setup_logger():
     # set log level
     logger.setLevel(logging.INFO)
 
+    logs_path = os.path.join(os.getcwd(), 'logs')
+    if not os.path.exists(logs_path):
+        os.makedirs(logs_path)
     # define handler and formatter
     handler = logging.FileHandler(os.path.join('logs', 'app.log'))
     # handler = logging.StreamHandler()
