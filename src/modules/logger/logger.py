@@ -2,12 +2,14 @@ import logging
 import os
 
 
+# Logger parameters setup
 def setup_logger():
     logger = logging.getLogger()
     # set log level
     logger.setLevel(logging.INFO)
 
     logs_path = os.path.join(os.getcwd(), 'logs')
+    # Verifies if logs dir exists
     if not os.path.exists(logs_path):
         os.makedirs(logs_path)
     # define handler and formatter

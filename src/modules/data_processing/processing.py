@@ -12,7 +12,7 @@ class SpreadSheet:
         self.sheet = None
         self.values = None
 
-    # Get the sheet from the service builted
+    # Get the spreadsheet of the created service
     def get_sheet(self, service):
         try:
             self.sheet = service.spreadsheets()
@@ -20,7 +20,7 @@ class SpreadSheet:
         except Error as error:
             logger.error(f"An error occurred: {error}")
 
-    # Process data and stores in ent_values
+    # Processes data and stores it in ent_values
     def process_sheet(self):
         values = self.values[1].get("values", [])
         ent_values = []
@@ -36,8 +36,8 @@ class SpreadSheet:
         logger.info("Processed the values successfully")
         return ent_values
 
-    # Get multiples values from sheet to process data, both row with the total number of classes and the rows with the
-    # students data
+    # Obtains multiple values ​​from the spreadsheet to process data, both the row with the total number of
+    # classes and the rows with student data
     def batch_get_values(self, range_names):
         try:
             result = (
@@ -53,7 +53,7 @@ class SpreadSheet:
             logger.error(f"An error occurred: {error}")
             return error
 
-    # Update the Google spreadsheet with the new values
+    # Updates the Google spreadsheet with new values
     def update_values(self, range_name, ent_values):
         try:
             self.sheet.values().update(spreadsheetId=self.spreadsheet_id, range=range_name,
@@ -62,12 +62,12 @@ class SpreadSheet:
         except HttpError as error:
             logger.error(f"An error occurred: {error}")
 
-    # Extract the total number of classes from the values
+    # Extracts the total number of classes from data
     def get_total_classes(self):
         values = self.values[0].get("values", [])
         return int(values[0][0].partition(":")[2].strip())
 
-    # Calculate the student situation based on the challenge rules
+    # Calculates student situation based on challenge rules
     def calc_situation(self, average, absence):
         total_classes = self.get_total_classes()
         if int(absence) > total_classes * 0.25:
@@ -79,12 +79,12 @@ class SpreadSheet:
         else:
             return "Aprovado"
 
-    # Calculate average p1, p2 ,p3
+    # Calculates the average of p1, p2, p3
     @staticmethod
     def calc_average(p1, p2, p3):
         return ((p1 + p2 + p3) / 3) / 10
 
-    # Calculate the approval final grade
+    # Calculates the approval final grade
     @staticmethod
     def calc_approval_final_grade(average):
         naf = (5 * 2) - average
