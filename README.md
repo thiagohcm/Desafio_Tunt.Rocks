@@ -27,7 +27,13 @@ pip --version
 git clone https://github.com/thiagohcm/Desafio_Tunt.Rocks.git
 ```
 
-- Após clonar o repositório do projeto para sua máquina o próximo passo é criar um ambiente virtual
+- Após clonar o repositório do projeto para sua máquina o próximo passo é entrar no projeto com:
+
+```bash
+cd Desafio_Tunt.Rocks
+```
+
+- Dentro do projeto criar um ambiente virtual
 
 ```bash
 python -m venv venv
@@ -54,11 +60,12 @@ pip install -r requirements.txt
 # Como executar a aplicação 
 
 Após fazer a instalação de todas as dependências será possível rodar o código principal. 
-Com o terminal aberto no repositório rode o seguinte comando :
+Com o terminal aberto no repositório execute o comando :
 
 ```bash
 python .\src\app.py 
 ```
+Após executar, a planilha no Google Sheets será atualizada conforme regras do desafio.
 
 ## Google API
 
