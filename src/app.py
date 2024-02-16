@@ -9,7 +9,8 @@ def main():
 
     # Defines spreadsheet_id
     spreadsheet_id = "1CFZMCweRllZ5jkGm61EmkZStJPXnlbMnsn7O0zaOUOE"
-    # Defines the range for getting the data
+    # Defines the range for getting the data (First the range to get the row with the number of classes,
+    # second the row only with data)
     range_name = ["engenharia_de_software!A2", "engenharia_de_software!A4:F27"]
 
     # Instantiation of Client object
